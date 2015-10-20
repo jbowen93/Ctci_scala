@@ -79,7 +79,32 @@ class Chapter1Solution {
   }
 
   //Problem 1.7
+  def setZeros(matrix: Array[Array[Int]]) = {
+    val nLength = matrix.length
+    val mLength = matrix(0).length
+    val row = new Array[Boolean](nLength)
+    val column = new Array[Boolean](nLength)
 
+    //First Pass
+    for(i <- 0 until nLength) {
+      for(j <- 0 until mLength) {
+        if(matrix(i)(j) == 0) {
+          row(i) = true
+          column(j) = true
+        }
+      }
+    }
+    //Second Pass
+    for(i <- 0 until nLength) {
+      for(j <- 0 until mLength) {
+        if(row(i) || column(j)) {
+          matrix(i)(j) = 0
+        }
+      }
+    }
+    //return
+    matrix
+  }
 
   //Problem 1.8
 }

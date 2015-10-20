@@ -62,27 +62,31 @@ class Chapter1Solution$Test extends FunSuite {
   //Question 1.6 Tests
   test("Rotate Matrix") {
     val matrix = Array.ofDim[Int](3, 3)
-    matrix(0)(0) = 1
-    matrix(0)(1) = 2
-    matrix(0)(2) = 3
-    matrix(1)(0) = 4
-    matrix(1)(1) = 5
-    matrix(1)(2) = 6
-    matrix(2)(0) = 7
-    matrix(2)(1) = 8
-    matrix(2)(2) = 9
+    matrix(0)(0) = 1; matrix(0)(1) = 2; matrix(0)(2) = 3
+    matrix(1)(0) = 4; matrix(1)(1) = 5; matrix(1)(2) = 6
+    matrix(2)(0) = 7; matrix(2)(1) = 8; matrix(2)(2) = 9
 
     val rotatedMatrix = Array.ofDim[Int](3, 3)
-    rotatedMatrix(0)(0) = 7
-    rotatedMatrix(0)(1) = 4
-    rotatedMatrix(0)(2) = 1
-    rotatedMatrix(1)(0) = 8
-    rotatedMatrix(1)(1) = 5
-    rotatedMatrix(1)(2) = 2
-    rotatedMatrix(2)(0) = 9
-    rotatedMatrix(2)(1) = 6
-    rotatedMatrix(2)(2) = 3
+    rotatedMatrix(0)(0) = 7; rotatedMatrix(0)(1) = 4; rotatedMatrix(0)(2) = 1
+    rotatedMatrix(1)(0) = 8; rotatedMatrix(1)(1) = 5; rotatedMatrix(1)(2) = 2
+    rotatedMatrix(2)(0) = 9; rotatedMatrix(2)(1) = 6; rotatedMatrix(2)(2) = 3
 
     assert(testObject.matrixRotate(matrix, 3) === rotatedMatrix)
+  }
+
+  //Question 1.7 Tests
+  test("Set rows and columns to 0"){
+    val matrix = Array.ofDim[Int](3, 3)
+    matrix(0)(0) = 1; matrix(0)(1) = 1; matrix(0)(2) = 1
+    matrix(1)(0) = 1; matrix(1)(1) = 0; matrix(1)(2) = 1
+    matrix(2)(0) = 1; matrix(2)(1) = 1; matrix(2)(2) = 1
+
+    val zeroMatrix = Array.ofDim[Int](3, 3)
+    zeroMatrix(0)(0) = 1; zeroMatrix(0)(1) = 0; zeroMatrix(0)(2) = 1
+    zeroMatrix(1)(0) = 0; zeroMatrix(1)(1) = 0; zeroMatrix(1)(2) = 0
+    zeroMatrix(2)(0) = 1; zeroMatrix(2)(1) = 0; zeroMatrix(2)(2) = 1
+
+    assert(testObject.setZeros(matrix) === zeroMatrix)
+
   }
 }
