@@ -24,9 +24,24 @@ class Chapter1Solution$Test extends FunSuite {
     assert(testObject.isUniqueChar("abcdefg") === true)
   }
 
-  //Question 1.2 Functional Tests
+  //Question 1.2 was for C/C++ code so we'll be ignoring it.
 
-  //Question 1.3 Tests
+  //Question 1.3 Functional Tests
+  test("Functional method called where strings are permutations") {
+    assert(testObject.isPermutationFunctional("abc", "cba"))
+  }
 
+  test("Functional method called where strings are not permutations") {
+    assert(!testObject.isPermutationFunctional("abcd", "zcba"))
+  }
+
+  //Question 1.3 Imperative Tests
+  test("Imperative method called where strings are permutations") {
+    assert(testObject.isPermutation("abc", "cba"))
+  }
+
+  test("Imperative method called where strings are not permutations") {
+    assert(!testObject.isPermutation("abcd", "zcba"))
+  }
   //etc
 }
