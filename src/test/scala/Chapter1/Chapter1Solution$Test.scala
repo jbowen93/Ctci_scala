@@ -28,20 +28,34 @@ class Chapter1Solution$Test extends FunSuite {
 
   //Question 1.3 Functional Tests
   test("Functional method called where strings are permutations") {
-    assert(testObject.isPermutationFunctional("abc", "cba"))
+    assert(testObject.isPermutationFunctional("abc", "cba") === true)
   }
 
   test("Functional method called where strings are not permutations") {
-    assert(!testObject.isPermutationFunctional("abcd", "zcba"))
+    assert(testObject.isPermutationFunctional("abcd", "zcba") === false)
   }
 
   //Question 1.3 Imperative Tests
   test("Imperative method called where strings are permutations") {
-    assert(testObject.isPermutation("abc", "cba"))
+    assert(testObject.isPermutation("abc", "cba") === true)
   }
 
   test("Imperative method called where strings are not permutations") {
-    assert(!testObject.isPermutation("abcd", "zcba"))
+    assert(testObject.isPermutation("abcd", "zcba") === false)
   }
-  //etc
+
+  //Question 1.4 is weird to write out but pretty easy to explain. Skipping it.
+
+  //Question 1.5 Tests
+  test("Compress string where compressed length would be longer") {
+    assert(testObject.compressString("abcd") === "abcd")
+  }
+
+  test("Compress string where compressed length would be shorter") {
+    assert(testObject.compressString("aaabbb") === "a3b3")
+  }
+
+  test("Compress blank string") {
+    assert(testObject.compressString("") === "")
+  }
 }

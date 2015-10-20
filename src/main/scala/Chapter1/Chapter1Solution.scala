@@ -37,4 +37,30 @@ class Chapter1Solution {
     sortedStr1 == sortedStr2
   }
 
+  //Problem 1.4 is weird to write out but pretty easy to explain. Skipping it.
+
+  //Problem 1.5
+  def compressString(str: String) = {
+    var retStr = ""
+    if (str.length > 0) {
+      var i = 1
+      var count = 1
+      var last = str(0)
+      while(i <= str.length) {
+        if (i < str.length && str(i) == last) {
+          count += 1
+        }
+        else {
+          retStr += last + count.toString
+          if (i < str.length) {
+            last = str(i)
+            count = 1
+          }
+        }
+        i += 1
+      }
+    }
+    if (retStr.length < str.length) retStr
+    else str
+  }
 }
