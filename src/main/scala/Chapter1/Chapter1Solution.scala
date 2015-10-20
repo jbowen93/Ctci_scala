@@ -107,4 +107,10 @@ class Chapter1Solution {
   }
 
   //Problem 1.8
+  def isRotation(str1: String, str2: String) = {
+    if(str1.length == str2.length) {
+      (str1+str1).contains(str2)
+    }
+    else false
+  }
 }

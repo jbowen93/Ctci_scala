@@ -75,7 +75,7 @@ class Chapter1Solution$Test extends FunSuite {
   }
 
   //Question 1.7 Tests
-  test("Set rows and columns to 0"){
+  test("Set rows and columns to 0") {
     val matrix = Array.ofDim[Int](3, 3)
     matrix(0)(0) = 1; matrix(0)(1) = 1; matrix(0)(2) = 1
     matrix(1)(0) = 1; matrix(1)(1) = 0; matrix(1)(2) = 1
@@ -87,6 +87,14 @@ class Chapter1Solution$Test extends FunSuite {
     zeroMatrix(2)(0) = 1; zeroMatrix(2)(1) = 0; zeroMatrix(2)(2) = 1
 
     assert(testObject.setZeros(matrix) === zeroMatrix)
-
   }
+
+    //Question 1.8 Tests
+    test("Verify that str2 is a rotation of str1") {
+      assert(testObject.isRotation("abcdefg" , "cdefgab") === true)
+    }
+
+    test("Verify that str2 is not a rotation of str1") {
+      assert(testObject.isRotation("abcdefg", "abdefgc") === false)
+    }
 }
