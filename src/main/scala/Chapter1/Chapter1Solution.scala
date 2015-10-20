@@ -63,4 +63,23 @@ class Chapter1Solution {
     if (retStr.length < str.length) retStr
     else str
   }
+
+  //Problem 1.6
+  def matrixRotate(matrix: Array[Array[Int]], n: Int) = {
+    for(i <- 0 until n/2) {
+      for(j <- 0 until (n+1)/2) {
+        val temp = matrix(i)(j)                 //Store Top
+        matrix(i)(j) = matrix(n-1-j)(i)         //Right -> Top
+        matrix(n-1-j)(i) = matrix(n-1-i)(n-1-j) //Bottom -> Right
+        matrix(n-1-i)(n-1-j) = matrix(j)(n-1-i) //Left -> Bottom
+        matrix(j)(n-1-i) = temp                 //Top -> Left
+      }
+    }
+    matrix
+  }
+
+  //Problem 1.7
+
+
+  //Problem 1.8
 }
