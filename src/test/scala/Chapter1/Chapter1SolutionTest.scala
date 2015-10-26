@@ -2,7 +2,7 @@ package Chapter1
 
 import org.scalatest.FunSuite
 
-class Chapter1Solution$Test extends FunSuite {
+class Chapter1SolutionTest extends FunSuite {
 
   val testObject = new Chapter1Solution
 
